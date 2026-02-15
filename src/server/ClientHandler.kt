@@ -22,17 +22,13 @@ class ClientHandler(private val clientSocket: Socket) {
         //socket connection is OK
         while (running) {
             try {
-
                 //reading message
                 readMessage()
-
             } catch (e: Exception) {
                 throw (IllegalArgumentException(e))
             }
         }
     }
-
-
     private fun readMessage() {
         return println(reader.readLine())
     }
