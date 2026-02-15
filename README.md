@@ -1,30 +1,31 @@
-How to Run and Test the TCP Server
-1. Start the Server
+# How to Run and Test the TCP Server
 
-Open the project in IntelliJ and run the main() function.
+## 1. Start the Server (IntelliJ)
 
-The server will start listening on port 8888 and wait for incoming connections.
+1. Open the project in IntelliJ.
+2. Locate the file containing the `main()` function.
+3. Click the green ▶ button next to `main()` and select **Run**.
 
-2. Test Using Telnet (Windows)
+The server will start listening on port `8888` and wait for incoming connections.
 
-If Telnet is not enabled on your system, enable it first:
+---
 
-Press Win + R
+## 2. Test the Server Using Telnet (Windows)
 
-Type optionalfeatures
+### Enable Telnet (if not already enabled)
 
-Check Telnet Client
+1. Press **Win + R**
+2. Type `optionalfeatures`
+3. Enable **Telnet Client**
+4. Click **OK** and wait for installation to complete
+5. Restart PowerShell or Command Prompt
 
-Click OK and wait for installation
+### Connect to the Server
 
-Restart PowerShell or Command Prompt
-
-Once enabled, open a new terminal and run:
-
-telnet localhost 8888
+Open a new terminal window and run: telnet localhost 8888
 
 
 You are now connected to the server.
 
-Type a message and press Enter.
+Type a message and press **Enter**.  
 The server will receive and process your input.
