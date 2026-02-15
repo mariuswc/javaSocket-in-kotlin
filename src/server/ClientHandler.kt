@@ -6,7 +6,7 @@ import java.io.PrintWriter
 import java.net.Socket
 
 
-class ClientHandler(private val clientSocket: Socket) {
+class ClientHandler(clientSocket: Socket) {
 
     private val reader = BufferedReader(clientSocket.getInputStream().reader())
     private val writer = BufferedWriter(clientSocket.getOutputStream().writer())
