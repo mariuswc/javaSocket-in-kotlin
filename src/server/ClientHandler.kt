@@ -2,41 +2,44 @@ package server
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
-import java.io.InputStream
-import java.io.OutputStream
 import java.io.PrintWriter
 import java.net.Socket
 
 
-class ClientHandler(clientSocket: Socket) {
+class ClientHandler(private val clientSocket: Socket) {
 
-    private val write: OutputStream = clientSocket.getOutputStream()
-    private val reader: InputStream = clientSocket.getInputStream()
+    private val reader = BufferedReader(clientSocket.getInputStream().reader())
+    private val writer = BufferedWriter(clientSocket.getOutputStream().writer())
     private var running: Boolean = false
 
     fun handle() {
         running = true
-        //reads from client
-        val readingFromClient = BufferedReader(reader.reader())
-        //writes back to the client
-        val writingToClient = BufferedWriter(write.writer())
+        println("Someone has started a chat with you")
 
-        println("Server has started, please type something ")
+        //Sending message to client:
+        writeMessage("Hello, type something")
+
         //socket connection is OK
         while (running) {
             try {
-                val message = readingFromClient.readLine()
-                println("You received a message: ${message.trim()}")
-//                if (message == "null"){
-//                    print(" Client has shutdown ")
-//                    clientSocket.close()
-//                }
-                PrintWriter(writingToClient, true)
+
+                //reading message
+                readMessage()
 
             } catch (e: Exception) {
                 throw (IllegalArgumentException(e))
             }
         }
+    }
 
+
+    private fun readMessage() {
+        return println(reader.readLine())
+    }
+    private fun writeMessage(message: String) {
+        return PrintWriter(writer, true)
+            .println(message)
     }
 }
+
+
