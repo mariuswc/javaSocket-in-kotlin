@@ -8,8 +8,8 @@ import java.io.PrintWriter
 import java.net.Socket
 
 
-class ClientHandler(
-    private val clientSocket: Socket) {
+class ClientHandler(clientSocket: Socket) {
+
     private val write: OutputStream = clientSocket.getOutputStream()
     private val reader: InputStream = clientSocket.getInputStream()
     private var running: Boolean = false
