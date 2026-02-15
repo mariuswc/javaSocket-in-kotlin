@@ -5,9 +5,8 @@ import java.io.BufferedWriter
 import java.io.InputStream
 import java.io.OutputStream
 import java.io.PrintWriter
-import java.io.Reader
 import java.net.Socket
-import java.util.Scanner
+
 
 class ClientHandler(
     private val clientSocket: Socket) {
@@ -32,7 +31,7 @@ class ClientHandler(
 //                    print(" Client has shutdown ")
 //                    clientSocket.close()
 //                }
-                val output = PrintWriter(writingToClient, true)
+                PrintWriter(writingToClient, true)
 
             } catch (e: Exception) {
                 throw (IllegalArgumentException(e))
