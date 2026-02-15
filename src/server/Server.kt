@@ -4,8 +4,7 @@ import java.io.IOException
 import java.net.ServerSocket
 import kotlin.concurrent.thread
 
-class Server(
-) {
+class Server() {
 
       fun start() {
          try {
@@ -28,23 +27,4 @@ class Server(
     }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

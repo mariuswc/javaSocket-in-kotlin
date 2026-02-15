@@ -6,7 +6,7 @@ import java.io.PrintWriter
 import java.net.Socket
 
 
-class ClientHandler(private val clientSocket: Socket) {
+class ClientHandler(clientSocket: Socket) {
 
     private val reader = BufferedReader(clientSocket.getInputStream().reader())
     private val writer = BufferedWriter(clientSocket.getOutputStream().writer())
@@ -22,17 +22,13 @@ class ClientHandler(private val clientSocket: Socket) {
         //socket connection is OK
         while (running) {
             try {
-
                 //reading message
                 readMessage()
-
             } catch (e: Exception) {
                 throw (IllegalArgumentException(e))
             }
         }
     }
-
-
     private fun readMessage() {
         return println(reader.readLine())
     }
