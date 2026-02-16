@@ -20,10 +20,14 @@ The server will start listening on port `8888` and wait for incoming connections
 4. Click **OK** and wait for installation to complete
 5. Restart PowerShell or Command Prompt
 
-### Connect to the Server
-
 Open a new terminal window and run: telnet localhost 8888
 
+### Connect to the Server
+
+## 2. Test the Server using NetCat (Mac)
+1. Open terminal
+2. run nc localhost 8888
+   
 
 You are now connected to the server.
 
